@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
         }
 
         float moveInput = Input.GetAxisRaw("Horizontal");
+        Debug.Log("moveInput");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
         if (moveInput == 0)
