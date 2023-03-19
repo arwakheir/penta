@@ -84,11 +84,11 @@ public class PlayerController : MonoBehaviour
              anim.SetBool("isRunning", true);
         }
 
-        if (moveInput < 0)
+        if (moveInput > 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        else if (moveInput > 0)
+        else if (moveInput < 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
