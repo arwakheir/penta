@@ -32,9 +32,10 @@ public class PlayerController : MonoBehaviour
     {
       isGrounded = Physics2D.OverlapCircle(groundPos.position, checkRadius, whatIsGround);
 
-      if (isGrounded == true && Input.GetKeyDown(KeyCode.Z))
+      if (isGrounded == true && Input.GetKeyDown(KeyCode.W))
 
       {
+        anim.SetTrigger("takeOf");
         isJumping = true;
         jumpTimeCounter = jumpTime;
         rb.velocity = Vector2.up * jumpForce;
@@ -42,9 +43,14 @@ public class PlayerController : MonoBehaviour
         if (isGrounded == true)
         {
             doubleJump = false;
+            anim.SetBool("isJumping", false);
+        }
+        else 
+        {
+            anim.SetBool("isJumping", true);
         }
 
-        if (Input.GetKey(KeyCode.Z) && isJumping == true)
+        if (Input.GetKey(KeyCode.W) && isJumping == true)
         {
             if (jumpTimeCounter > 0)
             {
@@ -57,12 +63,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.Z))
+        if(Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false ;
         }
 
-        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.Z))
+        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.W))
         {
             isJumping = true;
             doubleJump = true;
