@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         else 
         {
             anim.SetBool("isJumping", true);
+            
         }
 
         if (Input.GetKey(KeyCode.W) && isJumping == true)
