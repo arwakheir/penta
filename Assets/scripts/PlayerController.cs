@@ -28,19 +28,19 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
       isGrounded = Physics2D.OverlapCircle(groundPos.position, checkRadius, whatIsGround);
 
       if (isGrounded == true && Input.GetKeyDown(KeyCode.W))
-
       {
         anim.SetTrigger("takeOf");
+        
+        rb.velocity = Vector2.up * jumpForce;
         isJumping = true;
         jumpTimeCounter = jumpTime;
-        rb.velocity = Vector2.up * jumpForce;
       } 
-        if (isGrounded == true)
+        if (isGrounded is true)
         {
             doubleJump = false;
             anim.SetBool("isJumping", false);
@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             doubleJump = true;
-            isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
         }

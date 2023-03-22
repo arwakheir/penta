@@ -18,9 +18,10 @@ public class HeartPickup : MonoBehaviour
     originalPosition = transform.position;
   }
    
-  private void OnTriggerEnter2D(BoxCollider2D other) {
+  private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player")
         {
+          Debug.Log("hit player");
           if (useTransformList)
           {
               int index = Random.Range(0 , transformList.Length);
