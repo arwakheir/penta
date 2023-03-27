@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 1da84dfe44f7646a3aeb3842ea238475
   - enabled: 1
+    path: Assets/Scenes/IntroVideo.unity
+    guid: 95fb14241d9c94598ac0529c00d71d44
+  - enabled: 1
     path: Assets/Scenes/Barganing.unity
     guid: 210371f15850740b6b28f7aa99e25639
   m_configObjects: {}
