@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         if (heartCounter >= maxHearts)
         {
             //move to nexger.Loat scene
-            //SceneManager.LoadScene("")
+            SceneManager.LoadScene("Barginfo");
 
         }
     }
