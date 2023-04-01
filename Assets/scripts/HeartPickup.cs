@@ -11,8 +11,10 @@ public class HeartPickup : MonoBehaviour
 
   [SerializeField] Transform[] transformList;
   [SerializeField] bool useTransformList = false;
+  [SerializeField] GameManager gameManager;
 
   private Vector2 originalPosition;
+  private int lastIndex;
 
   private void Start() {
     originalPosition = transform.position;
@@ -25,13 +27,25 @@ public class HeartPickup : MonoBehaviour
           if (useTransformList)
           {
               int index = Random.Range(0 , transformList.Length);
+              if (index == lastIndex)
+              {
+                index++;
+                if (index >= transformList.Length)
+                {
+                  index = 0;
+                }
+                lastIndex = index;
+              }
               transform.position = transformList[index].position;
+              gameManager.AddHearts(1);
+            
               //check lerp
           }
           else 
           {
             float xPosition = Random.Range(lowerBoundX, upperBoundX);
             transform.position = new Vector2(xPosition, originalPosition.y);
+            gameManager.AddHearts(1);
           }
           
         }
