@@ -23,6 +23,7 @@ public class CharacterController2D : MonoBehaviour
 	[Space]
 
 	public UnityEvent OnLandEvent;
+	
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }

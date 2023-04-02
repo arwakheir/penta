@@ -6,12 +6,18 @@ public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
 	public Animator animator;
+	AudioSource jumpSound;
 
 	public float runSpeed = 40f;
 
 	float horizontalMove = 0f;
 	bool jump = false;
 	bool crouch = false;
+
+	void Start ()
+	{
+		jumpSound = GetComponent<AudioSource>();
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -22,8 +28,10 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (Input.GetButtonDown("Jump"))
 		{
+			jumpSound.Play();
 			jump = true;
 			animator.SetBool("IsJumping", true);
+
 		}
 
 		// if (Input.GetButtonDown("Crouch"))
