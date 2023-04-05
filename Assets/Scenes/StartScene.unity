@@ -7473,6 +7473,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 846042953}
     m_Modifications:
+    - target: {fileID: 536038392254156025, guid: 1e99e7f0ee1014a599b4a8dc8f4f8ad7, type: 3}
+      propertyPath: m_WaitForFirstFrame
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 536038392254156028, guid: 1e99e7f0ee1014a599b4a8dc8f4f8ad7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
