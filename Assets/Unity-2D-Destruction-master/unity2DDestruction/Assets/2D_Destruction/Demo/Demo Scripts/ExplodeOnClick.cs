@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 using EZCameraShake;
 
@@ -7,6 +8,7 @@ public class ExplodeOnClick : MonoBehaviour {
 
 	private Explodable _explodable;
 	private ExplosionForce ef;
+	public AudioSource wall;
 	void Start()
 	{
 		_explodable = GetComponent<Explodable>();
@@ -14,6 +16,7 @@ public class ExplodeOnClick : MonoBehaviour {
 	}
 	void OnMouseDown()
 	{
+		wall.Play();
 		_explodable.explode();
 		ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
 		ef.doExplosion(transform.position);

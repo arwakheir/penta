@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour
 {
+    
     Vector2 startPos;
      private void Start() {
         startPos = transform.position;
