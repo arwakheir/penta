@@ -3,22 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Hit
-  - Shatter
-  - Destroy
-  - tagToDestroy
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 
@@ -45,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: layer
-    uniqueID: 3089714215
     locked: 0
