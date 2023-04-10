@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartCounter: 0
-  maxHearts: 8
+  maxHearts: 11
 --- !u!4 &1878029841
 Transform:
   m_ObjectHideFlags: 0

@@ -12,8 +12,6 @@ public class Hit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-
-       
         if (other.CompareTag("Hit"))
         {
             Die();

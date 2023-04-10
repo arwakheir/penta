@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Barginfo.unity
     guid: e4c18e16a4a1243489969b0d8c0ca56b
   - enabled: 1
+    path: Assets/Scenes/DenialTransition.unity
+    guid: e15b046ad5d1e4eb8bd35c0d0631da03
+  - enabled: 1
     path: Assets/Scenes/Denial.unity
     guid: 002093ac7468f44b0b59c8c81f356a9d
   m_configObjects: {}
