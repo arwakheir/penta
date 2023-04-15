@@ -9,6 +9,7 @@ TagManager:
   - Shatter
   - Destroy
   - tagToDestroy
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class typewriterUI : MonoBehaviour
+public class Typewritereffect : MonoBehaviour
 {
     Text _text;
     TMP_Text _tmpProText;

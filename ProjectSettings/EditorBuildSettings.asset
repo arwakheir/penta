@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Denial.unity
     guid: 002093ac7468f44b0b59c8c81f356a9d
+  - enabled: 1
+    path: Assets/Scenes/DenialInfo.unity
+    guid: 2be9ca06b4dd141b4b0c7ebd8a67849c
   m_configObjects: {}
