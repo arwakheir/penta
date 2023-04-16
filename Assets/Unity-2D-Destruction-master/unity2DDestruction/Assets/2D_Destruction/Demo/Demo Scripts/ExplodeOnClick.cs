@@ -9,6 +9,7 @@ public class ExplodeOnClick : MonoBehaviour {
 	private Explodable _explodable;
 	private ExplosionForce ef;
 	public AudioSource wall;
+	public WallSpawner wallSpawner;
 	void Start()
 	{
 		_explodable = GetComponent<Explodable>();
@@ -22,5 +23,13 @@ public class ExplodeOnClick : MonoBehaviour {
 		ef.doExplosion(transform.position);
 		CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
 		//Debug.Log(ef);
+		//StartCoroutine(SpawnNewWall());
+		
+	}
+
+	IEnumerator SpawnNewWall()
+	{
+		yield return new WaitForSeconds(3f);
+		wallSpawner.SpawnWall();
 	}
 }
