@@ -7,13 +7,15 @@ using EZCameraShake;
 public class ExplodeOnClick : MonoBehaviour {
 
 	private Explodable _explodable;
+	private WallRespawn1 wallSpawner;
 	private ExplosionForce ef;
 	public AudioSource wall;
-	public WallSpawner wallSpawner;
+
 	void Start()
 	{
 		_explodable = GetComponent<Explodable>();
 		ef = GetComponent<ExplosionForce>();
+		wallSpawner = FindObjectOfType<WallRespawn1>();
 	}
 	void OnMouseDown()
 	{
@@ -22,14 +24,8 @@ public class ExplodeOnClick : MonoBehaviour {
 		ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
 		ef.doExplosion(transform.position);
 		CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
-		//Debug.Log(ef);
-		//StartCoroutine(SpawnNewWall());
+      wallSpawner.isWallInScene = false;
 		
 	}
 
-	IEnumerator SpawnNewWall()
-	{
-		yield return new WaitForSeconds(3f);
-		wallSpawner.SpawnWall();
-	}
 }
