@@ -9,6 +9,8 @@ public class WallRespawn1 : MonoBehaviour
     [SerializeField] private float lowerHorizontalBound;
     [Tooltip("The Uppwe X limit of spawning walls")]
     [SerializeField] private float upperHorizontalBound;
+    [Tooltip("The right Y limit of spawning walls")]
+    [SerializeField] private float upperVerticalBound;
     [Tooltip("Time between wall generation(needs to be higher than the time of fragments destruction")]
     [SerializeField] private float wallGenerationCoolDown = 3f;
 
