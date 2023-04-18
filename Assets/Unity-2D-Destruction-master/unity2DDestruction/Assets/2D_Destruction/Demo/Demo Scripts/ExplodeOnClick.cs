@@ -9,17 +9,20 @@ public class ExplodeOnClick : MonoBehaviour {
 	private Explodable _explodable;
 	private WallRespawn1 wallSpawner;
 	private ExplosionForce ef;
-	public AudioSource wall;
+	//public AudioSource wall;
+	// [SerializeField] private AudioSource wall;
 
 	void Start()
 	{
 		_explodable = GetComponent<Explodable>();
 		ef = GetComponent<ExplosionForce>();
 		wallSpawner = FindObjectOfType<WallRespawn1>();
+		//wall = GetComponent<AudioSource>();
+
 	}
 	void OnMouseDown()
 	{
-		wall.Play();
+		//wall.Play();
 		_explodable.explode();
 		ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
 		ef.doExplosion(transform.position);
