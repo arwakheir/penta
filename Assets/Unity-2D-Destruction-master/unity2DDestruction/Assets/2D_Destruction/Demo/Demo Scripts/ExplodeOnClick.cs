@@ -10,6 +10,7 @@ public class ExplodeOnClick : MonoBehaviour {
 	private WallRespawn1 wallSpawner;
 	private ExplosionForce ef;
 	//public AudioSource wall;
+	public AudioClip destructionSound;
 	// [SerializeField] private AudioSource wall;
 
 	void Start()
@@ -17,17 +18,16 @@ public class ExplodeOnClick : MonoBehaviour {
 		_explodable = GetComponent<Explodable>();
 		ef = GetComponent<ExplosionForce>();
 		wallSpawner = FindObjectOfType<WallRespawn1>();
-		//wall = GetComponent<AudioSource>();
-
 	}
 	void OnMouseDown()
 	{
-		//wall.Play();
+		//wall.Play(destructionSound);
+		AudioSource.PlayClipAtPoint(destructionSound, transform.position);
 		_explodable.explode();
 		ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
 		ef.doExplosion(transform.position);
 		CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
-      wallSpawner.isWallInScene = false;
+        wallSpawner.isWallInScene = false;
 		
 	}
 
