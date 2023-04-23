@@ -10,6 +10,7 @@ TagManager:
   - Destroy
   - tagToDestroy
   - Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX
