@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Barginfo.unity
     guid: e4c18e16a4a1243489969b0d8c0ca56b
+  - enabled: 1
+    path: Assets/Scenes/angertransition.unity
+    guid: e7d0c51538b3041228fe11ae1a43e742
+  - enabled: 1
+    path: Assets/Scenes/Anger.unity
+    guid: 9b07e3f6d558a41f4934d8d2f0cdc567
+  - enabled: 1
+    path: Assets/Scenes/AngerInfo.unity
+    guid: 2ccea99be0a0c448e914b2e20fc47433
   m_configObjects: {}
