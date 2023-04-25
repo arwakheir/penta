@@ -614,6 +614,11 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!82 &1434677863 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5309696278666296413, guid: 8579cac1d86ab48e2b0fec56f01f4ebf, type: 3}
+  m_PrefabInstance: {fileID: 1404710430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1451042505
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +759,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 554629809}
     m_Modifications:
+    - target: {fileID: 7761197673545891929, guid: 2d5d2b3eee48249bd87c64d01bd80ce3, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1434677863}
+    - target: {fileID: 7761197673545891929, guid: 2d5d2b3eee48249bd87c64d01bd80ce3, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
     - target: {fileID: 7761197673545891932, guid: 2d5d2b3eee48249bd87c64d01bd80ce3, type: 3}
       propertyPath: m_Name
       value: Button
