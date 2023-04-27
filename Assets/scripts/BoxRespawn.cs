@@ -6,31 +6,31 @@ public class BoxRespawn : MonoBehaviour
 {
     [SerializeField] private GameObject boxPrefab;
     
-    [Tooltip("The lower X limit of spawning walls")]
+   // [Tooltip("The lower X limit of spawning boxes”)]
     [SerializeField] private float lowerHorizontalBound;
-    [Tooltip("The upper X limit of spawning walls")]
+    //[Tooltip("The upper X limit of spawning boxes”)]
     [SerializeField] private float upperHorizontalBound;
-   // [Tooltip("Time between wall generation (needs to be higher than the time of fragments destruction)")]
-    //[SerializeField] private float boxGenerationCoolDown = 3f;
-    [Tooltip("Maximum number of walls that can be respawned")]
+    //[Tooltip("Time between box generation (needs to be higher than the time of fragments destruction)")]
+    //[SerializeField] private float boxGeerationCoolDown = 3f;
+    [Tooltip("Maximum number of boxes that can be respawned")]
     [SerializeField] private int maxRespawns = 5;
 
-    //check if there is a wall in scene
+    //check if there is a box in scene
     public bool isBoxInScene { get; set; }
 
-    //counter for the number of walls created
+    //counter for the number of boxes created
     private int boxCount = 0;
 
     void Start()
     {
-        //start spawning initial wall
+        //start spawning initial box
         SpawnRandomBox();
         isBoxInScene = true;
     }
 
     private void Update()
     {
-        //check if there is no wall in scene and begin generating a new one if true
+        //check if there is no box in scene and begin generating a new one if true
         if (isBoxInScene is false)
         {
             //check if maximum number of respawns has been reached
@@ -49,21 +49,21 @@ public class BoxRespawn : MonoBehaviour
 
     private void SpawnRandomBox()
     {
-        //Generate random X position for the wall (make sure the wall spawner on the correct Y level)
+        //Generate random X position for the box (make sure the box spawner on the correct Y level)
         Vector3 newHorizontalPosition = GenerateRandomPosition();
         
-        //Generate a new wall at the new position
+        //Generate a new box at the new position
         SpawnBox(newHorizontalPosition);
 
-        //increment the wall counter
+        //increment the box counter
         boxCount++;
     }
 
     public IEnumerator BeginBoxSpawning()
     {
-        //wait for the wallGeneration cooldown
-        yield return new WaitForSeconds(0.02f);
-        //then start Generating the new wall
+        //wait for the boxGeneration cooldown
+        yield return new WaitForSeconds(1f);
+        //then start Generating the new box
         SpawnRandomBox();
      
     }
@@ -72,14 +72,18 @@ public class BoxRespawn : MonoBehaviour
     {
         //Get random X in the scene bounds
         float randomX = Random.Range(lowerHorizontalBound, upperHorizontalBound);
-        //generate a new wall in the random X, use the Y position of the wallSpawner object
+        //generate a new box in the random X, use the Y position of the boxSpawner object
         return new Vector3(randomX, transform.position.y, 0f);
         
     }
 
     private void SpawnBox(Vector3 spawnLocation)
     {
-        Instantiate(boxPrefab, spawnLocation, Quaternion.identity);
-        
+        GameObject box = Instantiate(boxPrefab, spawnLocation, Quaternion.identity);
+        Enemy enemy = box.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.boxRespawn = this;
+        }
     }
 }
