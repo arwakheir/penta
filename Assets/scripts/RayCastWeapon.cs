@@ -41,7 +41,7 @@ public class RayCastWeapon : MonoBehaviour{
 
 		lineRenderer.enabled = true;
 
-		yield return 0;
+		yield return new WaitForSeconds(0.02f);
 
 		lineRenderer.enabled = false;
 	}
