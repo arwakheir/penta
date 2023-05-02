@@ -41,4 +41,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AngerInfo.unity
     guid: 2ccea99be0a0c448e914b2e20fc47433
+  - enabled: 1
+    path: Assets/Scenes/Deptransition.unity
+    guid: c2dd93f94d7454544be460a6f432dcff
+  - enabled: 1
+    path: Assets/Scenes/Depression.unity
+    guid: 99e9de831a9234391afdff9a1d6ebeeb
+  - enabled: 1
+    path: Assets/Scenes/DepressionInfo.unity
+    guid: 08101448408204339bda121448439539
+  - enabled: 1
+    path: Assets/Scenes/acceptancetransit.unity
+    guid: 738610775c7a744468f4d3df39580a43
+  - enabled: 1
+    path: Assets/Scenes/acceptanceinfo.unity
+    guid: 9acedce2dba76447f94472527cbd245e
   m_configObjects: {}
