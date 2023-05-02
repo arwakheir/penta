@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
 
     public GameObject deathEffect;
     public BoxRespawn boxRespawn;
+    public BoxCounter angerSlider;
 
     public void TakeDamage (int damage)
     {
@@ -18,9 +19,14 @@ public class Enemy : MonoBehaviour {
             Die();
         }
     }
-    
+    private void IncreaseAngerSlider()
+    {
+        angerSlider.UpdateAnger();
+    }
+
     void Die ()
     {
+
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         boxRespawn.isBoxInScene = false;
         Destroy(gameObject);

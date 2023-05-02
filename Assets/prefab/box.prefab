@@ -146,11 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b66fe673b384b939d982610f9024f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRespawns: 3
   health: 100
   deathEffect: {fileID: 5598226870449929190, guid: 98cd4815cb1c4478282ec119f90d240a, type: 3}
-  respawnPrefab: {fileID: 8234956689958154435}
-  lowerXBound: -8
-  upperXBound: 8
-  lowerYBound: -3
-  upperYBound: 3
+  boxRespawn: {fileID: 2517494387052777981, guid: eb318ff256e4c4139bf45d02b169f49b, type: 3}

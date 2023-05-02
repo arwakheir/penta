@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BoxRespawn : MonoBehaviour
 {
+    [SerializeField] Slider healthSlider;
     [SerializeField] private GameObject boxPrefab;
     
    // [Tooltip("The lower X limit of spawning boxes”)]
@@ -13,7 +15,7 @@ public class BoxRespawn : MonoBehaviour
     //[Tooltip("Time between box generation (needs to be higher than the time of fragments destruction)")]
     //[SerializeField] private float boxGeerationCoolDown = 3f;
     [Tooltip("Maximum number of boxes that can be respawned")]
-    [SerializeField] private int maxRespawns = 5;
+    [SerializeField] public int maxRespawns = 5;
 
     //check if there is a box in scene
     public bool isBoxInScene { get; set; }
@@ -26,6 +28,8 @@ public class BoxRespawn : MonoBehaviour
         //start spawning initial box
         SpawnRandomBox();
         isBoxInScene = true;
+        // Set the slider's maximum value to the maximum number of respawns
+        healthSlider.maxValue = maxRespawns;
     }
 
     private void Update()
@@ -57,6 +61,10 @@ public class BoxRespawn : MonoBehaviour
 
         //increment the box counter
         boxCount++;
+
+        
+        // Decrement the slider value and update the health bar
+        healthSlider.value++;
     }
 
     public IEnumerator BeginBoxSpawning()
