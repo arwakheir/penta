@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/acceptancetransit.unity
     guid: 738610775c7a744468f4d3df39580a43
   - enabled: 1
+    path: Assets/Scenes/acceptance.unity
+    guid: d56aa79718ba44c60a47ba1b5ef6bca1
+  - enabled: 1
     path: Assets/Scenes/acceptanceinfo.unity
     guid: 9acedce2dba76447f94472527cbd245e
   - enabled: 1
